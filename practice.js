@@ -14,8 +14,36 @@ const calculator = {
     div: (a,b) => b !== 0 ? a / b : 'Cant divide by 0'
 }
 
+function ceasarCipher(str, num) {
+    let lowerCaseStr = str.toLowerCase()
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    let newStr = ''
 
-export {capitalize, reverseString, calculator}
+    for (let i = 0; i < lowerCaseStr.length; i++) {
+        let currentChar = lowerCaseStr[i]
+
+        if (!/[a-z]/.test(currentChar)) {
+            newStr += currentChar
+            continue
+        }
+
+        let currentIndex = alphabet.indexOf(currentChar)
+        let newIndex = currentIndex + num
+
+        if (newIndex > 25 ) newIndex = newIndex - 26
+        if (newIndex < 0) newIndex = newIndex + 26
+        if(str[i] === str[i].toUpperCase()) {
+           newStr += alphabet[newIndex].toUpperCase() 
+        } 
+        else newStr += alphabet[newIndex]
+    }
+
+    return newStr
+
+} 
+
+
+export {capitalize, reverseString, calculator, ceasarCipher}
 
 
 

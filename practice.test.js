@@ -1,6 +1,7 @@
 import {capitalize, 
         reverseString,
-        calculator } from './practice'
+        calculator ,
+        ceasarCipher,} from './practice'
 
 describe('capitalize', () => { 
     it('takes a string and captitalizes first character', () => {
@@ -31,4 +32,8 @@ describe('calculator', () => {
     it('divides two numbers', () => {
         expect(calculator.div(4,2)).toBe(2)
     })
+})
+
+describe('takes a string and a shift factor and returns it with each character “shifted”', () => {
+    expect(ceasarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
 })
