@@ -42,8 +42,20 @@ function ceasarCipher(str, num) {
 
 } 
 
+function analyzeArray(arr) {
 
-export {capitalize, reverseString, calculator, ceasarCipher}
+    const sum = arr.reduce((acc, val) => acc + val, 0)
+    const min = Math.min(...arr)
+    const max = Math.max(...arr)
+    const avg = sum / arr.length
+
+
+    return `object == {\n   average: ${avg},\n   min: ${min},\n   max: ${max},\n   length: ${arr.length}\n};`
+}
+
+
+
+export {capitalize, reverseString, calculator, ceasarCipher, analyzeArray}
 
 
 

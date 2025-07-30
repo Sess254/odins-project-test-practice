@@ -1,7 +1,8 @@
 import {capitalize, 
         reverseString,
         calculator ,
-        ceasarCipher,} from './practice'
+        ceasarCipher,
+        analyzeArray} from './practice'
 
 describe('capitalize', () => { 
     it('takes a string and captitalizes first character', () => {
@@ -34,6 +35,16 @@ describe('calculator', () => {
     })
 })
 
-describe('takes a string and a shift factor and returns it with each character “shifted”', () => {
-    expect(ceasarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+describe('ceasarCipher', () => {
+    it('that takes a string and a shift factor and returns it with each character “shifted”.', () => {
+        expect(ceasarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+    })
+
+})
+
+describe('analyzeArray', () => {
+    it('akes an array of numbers and returns an object with the specified properties', () => {
+        expect(analyzeArray([1,8,3,4,2,6])).toBe(`object == {\n   average: 4,\n   min: 1,\n   max: 8,\n   length: 6\n};`)
+    }) 
+    
 })
